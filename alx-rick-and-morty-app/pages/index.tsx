@@ -4,19 +4,18 @@ import { EpisodeProps } from "@/interfaces";
 import EpisodeCard from "@/components/common/EpisodeCard";
 import { useEffect, useState } from "react";
 
-import ErrorBoundary from "../components/ErrorBoundary";
-import SomeComponent from "../components/SomeComponent";
+import ErrorBoundary from '@/components/ErrorBoundary';
+import ErrorProneComponent from '@/components/ErrorProneComponent';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <div>
-      <h1>Welcome to the Rick and Morty App</h1>
-      <ErrorBoundary>
-        <SomeComponent />
-      </ErrorBoundary>
-    </div>
+    <ErrorBoundary>
+      <ErrorProneComponent />
+    </ErrorBoundary>
   );
-}
+};
+
+export default Home;
 
 
 
