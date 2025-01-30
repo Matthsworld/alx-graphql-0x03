@@ -4,6 +4,22 @@ import { EpisodeProps } from "@/interfaces";
 import EpisodeCard from "@/components/common/EpisodeCard";
 import { useEffect, useState } from "react";
 
+import ErrorBoundary from "../components/ErrorBoundary";
+import SomeComponent from "../components/SomeComponent";
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Welcome to the Rick and Morty App</h1>
+      <ErrorBoundary>
+        <SomeComponent />
+      </ErrorBoundary>
+    </div>
+  );
+}
+
+
+
 const Home: React.FC = () => {
   const [page, setPage] = useState<number>(1);
   const { loading, error, data, refetch } = useQuery(GET_EPISODES, {
